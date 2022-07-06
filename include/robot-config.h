@@ -3,18 +3,15 @@ using namespace vex;
  * Including .cpp files into main.cpp:
  *  When you want to use funtions written in a .cpp file, that say has an
  *  Autonomous routine or extra functions, you first create a .h file with the
- *  same name as your .cpp
+ *  same name as your .cpp .
  *
  *  Then, reference classes and voids without their configuration or code: just
  *  their reference:
  *   extern device Device_Name;
  *   void function_name(void);
  *
- *  Than, in main.cpp (or even other .h files), include your .h file as follows:
- *   #include "file_name.h"
- *
  *  If you are wondering where "robotconfig.h" is referenced, it is in "vex.h"
- *  along with other files
+ *  along with other files.
  */
 extern brain Brain;
 extern controller Controller1;
