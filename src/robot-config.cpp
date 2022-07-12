@@ -80,6 +80,7 @@ motor flywheel = motor(PORT16, ratio6_1, true);
  */
 motor_group leftDrive = motor_group(frontLeft, backLeft);
 motor_group rightDrive = motor_group(frontRight, backRight);
+drivetrain lrDrive = drivetrain(leftDrive, rightDrive);
 /*
  * vexcodeInit:
  *  Used to initialize code/tasks/devices added using tools in VEXcode Pro.

@@ -1,6 +1,8 @@
 #include "vex.h"
 using namespace vex;
-void autonomous1(void) {}
+void autonomous1(void) {
+  lrDrive.driveFor(10, distanceUnits units, 80, pct);
+}
 void autonomous2(void) {}
 void autonomous3(void) {}
 /*
