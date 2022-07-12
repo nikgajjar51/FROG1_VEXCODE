@@ -25,5 +25,5 @@ extern motor indexer;
 extern motor flywheel;
 extern motor_group leftDrive;
 extern motor_group rightDrive;
-extern drivetrain fullDrive();
+extern drivetrain fullDrive;
 void vexcodeInit(void);

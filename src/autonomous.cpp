@@ -1,10 +1,18 @@
 #include "vex.h"
 using namespace vex;
-void autonomous1(void) {
-  lrDrive.driveFor(10, distanceUnits units, 80, pct);
+void autonomous1() {
+  fullDrive.driveFor(fwd, 10, inches, 80, velocityUnits::pct);
+  intake.spinFor(5, sec, 100, velocityUnits::pct);
+  flywheel.spinFor(5, sec, 100, velocityUnits::pct);
+  fullDrive.turnFor(45, degrees, 80, velocityUnits::pct);
+  indexer.spinToPosition(30, degrees, 90, velocityUnits::pct);
 }
-void autonomous2(void) {}
-void autonomous3(void) {}
+void autonomous2() {
+  // Auton here
+}
+void autonomous3() {
+  // Auton here
+}
 /*
  * drawAutonSelection():
  *  This function will draw an autonmonous selection screen on the V5 brain
@@ -16,9 +24,9 @@ void autonomous3(void) {}
  *
  * selectedAuton:
  *  A global variable that holds which auton should be used.
- *  It should always have a value indexing a known auton so that if the above
- *  function is skipped, it still performs an autonomous routine without
- *  selection.
+ *  It should always have a value indexing a known auton so that if the
+ * above function is skipped, it still performs an autonomous routine
+ * without selection.
  *
  * totalAutons:
  *  the total number of autons you would like to chose from.
