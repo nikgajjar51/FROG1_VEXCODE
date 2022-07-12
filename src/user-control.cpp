@@ -20,28 +20,6 @@ using namespace vex;
  */
 double turnStick = Controller1.Axis1.position(percent);
 double driveStick = Controller1.Axis3.position(percent);
-int driveCurveScale = 10;
-int turnCurveScale = 10;
-// https://www.desmos.com/calculator/sdcgzah5ya
-int curveCalculation(int input, double curveScale) {
-  if (curveScale != 0) {
-    return exp(-curveScale / 10) +
-           exp((abs(input) - 100) / 10) * (1 - exp(-curveScale / 10)) * input;
-  }
-  return input;
-}
-void joystickArcadeCurve() {
-  if (abs(Controller1.Axis1.position()) > 10 ||
-      abs(Controller1.Axis3.position()) > 10) {
-    double driveVolts = curveCalculation(driveStick, driveCurveScale) * 0.12;
-    double turnVolts = curveCalculation(turnStick, turnCurveScale) * 0.12;
-    leftDrive.spin(forward, driveVolts + turnVolts, velocityUnits::pct);
-    rightDrive.spin(forward, driveVolts - turnVolts, velocityUnits::pct);
-  } else {
-    leftDrive.spin(fwd, 0, voltageUnits::volt);
-    rightDrive.spin(fwd, 0, voltageUnits::volt);
-  }
-}
 void joystickArcade() {
   if (abs(Controller1.Axis1.position()) > 10 ||
       abs(Controller1.Axis3.position()) > 10) {
