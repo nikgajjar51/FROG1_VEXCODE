@@ -35,8 +35,8 @@ void joystickArcadeCurve() {
       abs(Controller1.Axis3.position()) > 10) {
     double driveVolts = curveCalculation(driveStick, driveCurveScale) * 0.12;
     double turnVolts = curveCalculation(turnStick, turnCurveScale) * 0.12;
-    leftDrive.spin(forward, driveVolts + turnVolts, voltageUnits::volt);
-    rightDrive.spin(forward, driveVolts - turnVolts, voltageUnits::volt);
+    leftDrive.spin(forward, driveVolts + turnVolts, velocityUnits::pct);
+    rightDrive.spin(forward, driveVolts - turnVolts, velocityUnits::pct);
   } else {
     leftDrive.spin(fwd, 0, voltageUnits::volt);
     rightDrive.spin(fwd, 0, voltageUnits::volt);
@@ -45,10 +45,10 @@ void joystickArcadeCurve() {
 void joystickArcade() {
   if (abs(Controller1.Axis1.position()) > 10 ||
       abs(Controller1.Axis3.position()) > 10) {
-    double driveVolts = Controller1.Axis3.position() * 0.12;
-    double turnVolts = Controller1.Axis1.position() * 0.12;
-    leftDrive.spin(forward, driveVolts + turnVolts, voltageUnits::volt);
-    rightDrive.spin(forward, driveVolts - turnVolts, voltageUnits::volt);
+    double driveVolts = Controller1.Axis3.position()*1;
+    double turnVolts = Controller1.Axis1.position()*1;
+    leftDrive.spin(forward, driveVolts + turnVolts, velocityUnits::pct);
+    rightDrive.spin(forward, driveVolts - turnVolts, velocityUnits::pct);
   } else {
     leftDrive.spin(forward, 0, voltageUnits::volt);
     rightDrive.spin(forward, 0, voltageUnits::volt);
