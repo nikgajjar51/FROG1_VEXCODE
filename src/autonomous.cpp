@@ -94,6 +94,7 @@ void drawAutonSelection() {
  *  They will be run at the beginning of Auton and Driver Control
  */
 void calibrateSensors() {
+  inertial_sensor.calibrate();
   while (indexer.torque() < .6) {
     indexer.spin(fwd, 90, velocityUnits::pct);
   }

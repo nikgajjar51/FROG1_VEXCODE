@@ -34,7 +34,7 @@ void joystickArcade() {
 }
 void flywheelControl() {
   if (Controller1.ButtonR1.pressing() && Controller1.ButtonR2.pressing()) {
-    indexer.spinToPosition(35, degrees, 90, velocityUnits::pct);
+    indexer.spinToPosition(30, degrees, 90, velocityUnits::pct);
     indexer.spinToPosition(-110, degrees, 90, velocityUnits::pct);
   } else if (Controller1.ButtonR1.pressing()) {
     flywheel.spin(forward, 75, percent);
