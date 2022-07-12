@@ -25,7 +25,8 @@
 #include "v5.h"
 #include "v5_vcs.h"
 #include "robot-config.h"
-#include "autons.h"
+#include "autonomous.h"
+#include "user-control.h"
 /*
  * Custom Defined Functions:
  *  These have been added in for the V5 project by VEXcode.

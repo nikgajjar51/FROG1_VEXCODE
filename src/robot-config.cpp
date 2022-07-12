@@ -1,7 +1,5 @@
 #include "vex.h"
-
 using namespace vex;
-
 /*
  * Robot Configuration
  *
@@ -46,7 +44,7 @@ controller Controller1 = controller(primary);
  *  Some sensors, such as the Vision sensor, need extra configuration and should
  *  be configured in the "Normal" robot configuration menu.
  */
-inertial inertial_sensor = inertial(PORT2);
+inertial inertial_sensor = inertial(PORT12);
 /*
  * Motors:
  *  motor Motor_Name = motor(PORT#, Cartridge, Direction);
@@ -62,13 +60,13 @@ inertial inertial_sensor = inertial(PORT2);
  *   Forward: false
  *   Reverse: true
  */
-motor frontLeft = motor(PORT1, ratio6_1, false);
-motor backLeft = motor(PORT10, ratio6_1, false);
-motor frontRight = motor(PORT11, ratio6_1, true);
-motor backRight = motor(PORT20, ratio6_1, true);
-motor intake = motor(PORT1, ratio6_1, false);
-motor indexer = motor(PORT1, ratio18_1, false);
-motor flywheel = motor(PORT1, ratio6_1, false);
+motor frontLeft = motor(PORT9, ratio6_1, true);
+motor backLeft = motor(PORT20, ratio6_1, true);
+motor frontRight = motor(PORT10, ratio6_1, false);
+motor backRight = motor(PORT1, ratio6_1, false);
+motor intake = motor(PORT11, ratio18_1, true);
+motor indexer = motor(PORT13, ratio18_1, false);
+motor flywheel = motor(PORT16, ratio6_1, true);
 
 /*
  * Motor Groups:
@@ -77,10 +75,11 @@ motor flywheel = motor(PORT1, ratio6_1, false);
  *  Motor groups are helpful when configuring 2 motors geared together, such as
  *  in a drivetrain or 2 motor flywheel, or even a 2 motor intake.
  *  In addition, you can group as many motors as you would like.
+ *  Just make sure that your directions are set to avoid backdriving each motor
+ *  in the opposite direction which it's set to spin
  */
 motor_group leftDrive = motor_group(frontLeft, backLeft);
 motor_group rightDrive = motor_group(frontRight, backRight);
-
 /*
  * vexcodeInit:
  *  Used to initialize code/tasks/devices added using tools in VEXcode Pro.

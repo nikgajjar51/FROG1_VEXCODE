@@ -3,7 +3,7 @@ using namespace vex;
  * Including .cpp files into main.cpp:
  *  When you want to use funtions written in a .cpp file, that say has an
  *  Autonomous routine or extra functions, you first create a .h file with the
- *  same name as your .cpp .
+ *  same name as your .cpp (just to organize everything)
  *
  *  Then, reference classes and voids without their configuration or code: just
  *  their reference:
@@ -25,4 +25,5 @@ extern motor indexer;
 extern motor flywheel;
 extern motor_group leftDrive;
 extern motor_group rightDrive;
+extern drivetrain fullDrive();
 void vexcodeInit(void);
