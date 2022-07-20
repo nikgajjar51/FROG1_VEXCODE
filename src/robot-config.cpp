@@ -60,13 +60,13 @@ inertial inertial_sensor = inertial(PORT12);
  *   Forward: false
  *   Reverse: true
  */
-motor frontLeft = motor(PORT9, ratio6_1, true);
-motor backLeft = motor(PORT20, ratio6_1, true);
-motor frontRight = motor(PORT10, ratio6_1, false);
-motor backRight = motor(PORT1, ratio6_1, false);
-motor intake = motor(PORT11, ratio18_1, true);
-motor indexer = motor(PORT13, ratio18_1, false);
-motor flywheel = motor(PORT16, ratio6_1, true);
+motor frontLeft = motor(PORT11, ratio6_1, true);
+motor backLeft = motor(PORT12, ratio6_1, true);
+motor frontRight = motor(PORT14, ratio6_1, false);
+motor backRight = motor(PORT13, ratio6_1, false);
+motor intake = motor(PORT3, ratio18_1, true);
+motor indexer = motor(PORT2, ratio36_1, false);
+motor flywheel = motor(PORT5, ratio6_1, true);
 
 /*
  * Motor Groups:

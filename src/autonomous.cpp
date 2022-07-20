@@ -105,11 +105,11 @@ void drawAutonSelection() {
  */
 void calibrateSensors() {
   inertial_sensor.calibrate();
-  while (indexer.torque() < .6) {
-    indexer.spin(fwd, 90, velocityUnits::pct);
+  while (indexer.torque() < .7) {
+    indexer.spin(reverse, 90, velocityUnits::pct);
   }
   indexer.resetPosition();
-  indexer.spinToPosition(-90, degrees, 50, velocityUnits::pct);
+  indexer.spinToPosition(20, degrees, 50, velocityUnits::pct);
 }
 void runSelectedAuton() {
   if (selectedAuton == 1) {

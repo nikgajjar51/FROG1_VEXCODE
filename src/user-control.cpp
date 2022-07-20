@@ -34,14 +34,17 @@ void joystickArcade() {
 }
 void flywheelControl() {
   if (Controller1.ButtonR1.pressing() && Controller1.ButtonR2.pressing()) {
-    indexer.spinToPosition(30, degrees, 90, velocityUnits::pct);
-    indexer.spinToPosition(-110, degrees, 90, velocityUnits::pct);
+    indexer.spinToPosition(90, degrees, 90, velocityUnits::pct, false);
+    
   } else if (Controller1.ButtonR1.pressing()) {
     flywheel.spin(forward, 75, percent);
+    indexer.spinToPosition(0, degrees, 90, velocityUnits::pct, false);
   } else if (Controller1.ButtonR2.pressing()) {
     flywheel.spin(forward, 100, percent);
+    indexer.spinToPosition(0, degrees, 90, velocityUnits::pct, false);
   } else {
     flywheel.spin(fwd, 0, percent);
+    indexer.spinToPosition(0, degrees, 90, velocityUnits::pct, false);
   }
 }
 void intakeControl() {
